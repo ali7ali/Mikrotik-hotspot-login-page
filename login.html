@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+		<meta name="viewport" content="width=device-width, initial-scale=1"> 
+		<title>Al Maktab Hotspot Login</title>
+		<link rel="stylesheet" type="text/css" href="css/normalize.css" />
+		<link rel="stylesheet" type="text/css" href="css/demo.css" />
+		<link rel="stylesheet" type="text/css" href="css/component.css" />
+		<!--[if IE]>
+		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+	</head>
+	<body>
+	$(if chap-id)
+	<form name="sendin" action="$(link-login-only)" method="post">
+		<input type="hidden" name="username" />
+		<input type="hidden" name="password" />
+		<input type="hidden" name="dst" value="$(link-status)" />
+		<input type="hidden" name="popup" value="false" />
+	</form>
+	
+	<script type="text/javascript" src="/md5.js"></script>
+	<script type="text/javascript">
+	<!--
+	    function doLogin() {
+		document.sendin.username.value = document.login.username.value;
+		document.sendin.password.value = hexMD5('$(chap-id)' + document.login.password.value + '$(chap-challenge)');
+		document.sendin.submit();
+		return false;
+	    }
+	//-->
+	</script>
+	$(endif)
+		<div class="container demo-1">
+		
+			<div class="content">
+				<div id="large-header" class="large-header">
+					<canvas id="demo-canvas"></canvas>
+					
+					<div class="main-title">
+				
+					<div class="text-center" id="login" style="padding:25px; border: 0px dotted yellow; border-radius: 6px" >
+<p class=" text-center"><img src="img/logo.png">
+<br>
+<br>
+<br></p>
+				
+ 	<form class="form-signin " name="login" action="$(link-login-only)" method="post"
+	$(if chap-id) onSubmit="return doLogin()" $(endif)>
+	<input type="hidden" name="dst" value="$(link-status)" />
+	<input type="hidden" name="popup" value="false" />	  
+    <input name="username" type="text" value="$(username)" class="form-control" placeholder="Username"><br>
+    <input type="password" name="password" class="form-control" placeholder="Password">
+    <br>
+	<p class="text-center text-danger">&nbsp; $(if error) $(error) $(endif) &nbsp;</p>     
+    </label> 
+	<input name="submit" type="submit" value="Log In" class="btn btn-lg btn-success btn-block"/>
+  </form><br><br> 
+ 
+<div style="padding: 2px; border-top: 1px dotted yellow;">					
+<marquee width="100%" bgcolor="transparent" scrollamount="4">
+<span style="color:orange;">
+
+<!--RUNNING TEXT-->
+<strong>Welcome to Al Maktab Cafe</strong>
+</span>
+</marquee>
+</div>	 
+</div>	</div>
+				</div>
+				
+				
+			</div>
+			<!-- Related demos -->
+			
+			
+		</div><!-- /container -->
+		<script src="js/TweenLite.min.js"></script>
+		<script src="js/EasePack.min.js"></script>
+		<script src="js/rAF.js"></script>
+		<script src="js/demo-1.js"></script>
+
+<script type="text/javascript">
+<!--
+  document.login.username.focus();
+//-->
+</script>		
+	</body>
+</html>
